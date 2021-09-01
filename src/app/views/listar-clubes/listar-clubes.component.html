@@ -1,0 +1,36 @@
+<div *ngIf="!dadosClube" class="espera">
+    <mat-spinner  color="accent" mode="indeterminate"></mat-spinner>
+
+
+</div>
+
+<div class="content">
+    <div class="divmae">
+
+        <div *ngFor="let cc of dadosClube" class="divOrganizacao">
+        <mat-card class="mat-card" >
+            <mat-card-title>{{cc.nome}} </mat-card-title>
+            <mat-card-subtitle>{{cc.localizacao}} </mat-card-subtitle>
+            
+            <mat-card-content class="mat-card-content">
+                <img src='data:image/png;base64,{{cc.picByte}}' width="200" height="200">
+                
+                
+        
+            </mat-card-content>
+        <div class="buttons">
+            <div *ngIf="isadim" >
+            <button  mat-raised-button  color="warn"  matTooltip="apagar " (click)="Apagar(cc.nome)" class="separar"><i class="2rem material-icons" >delete</i> </button> 
+        
+            </div>
+            <button  mat-raised-button  color="warn" matTooltip="ver detalhes " (click)="detalhes(cc.codigo)" class="separar"><i class="2rem material-icons" >visibility</i></button> 
+            
+        </div>
+            
+        </mat-card>
+        
+        
+        </div>
+
+
+</div>

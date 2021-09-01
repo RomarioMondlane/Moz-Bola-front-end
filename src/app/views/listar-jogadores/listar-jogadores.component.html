@@ -1,0 +1,37 @@
+<div *ngIf="!dadosJogador" class="espera">
+    <mat-spinner  color="accent" mode="indeterminate"></mat-spinner>
+
+
+</div>
+
+<div class="content">
+    <div class="divmae">
+
+        <div *ngFor="let jj of dadosJogador" class="divOrganizacao">
+        <mat-card class="mat-card" >
+            <mat-card-title>{{jj.nome}} </mat-card-title>
+            <mat-card-subtitle>{{jj.posicao}} </mat-card-subtitle>
+            
+            <mat-card-content class="mat-card-content">
+                <img src='data:image/png;base64,{{jj.picByte}}' width="200" height="200">
+                
+                
+        
+            </mat-card-content>
+        <div class="buttons">
+            <button  mat-raised-button color="primary" matTooltip="Contactar " (click)="Contactar(jj.nome)" ><i class="2rem material-icons" >phone_in_talk</i></button> 
+            <div *ngIf="isadim" >
+            <button  mat-raised-button  color="warn"  matTooltip="apagar " (click)="Apagar(jj.codigo)" class="separar"><i class="2rem material-icons" >delete</i> </button> 
+        
+            </div>
+            <button  mat-raised-button  color="warn" matTooltip="ver detalhes " (click)="detalhes(jj.nome)" class="separar"><i class="2rem material-icons" >visibility</i></button> 
+            
+        </div>
+            
+        </mat-card>
+        
+        
+        </div>
+
+
+</div>

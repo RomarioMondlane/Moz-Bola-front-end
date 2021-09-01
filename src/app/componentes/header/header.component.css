@@ -1,0 +1,42 @@
+
+.toolbar{
+    background-color: #232F3E;
+    
+    font-size: 0.875rem; 
+    display: flex;
+    justify-content: flex-end;
+}
+.p{
+    margin-left: auto;
+    -webkit-box-reflect: below 0px linear gradient(to bottom, rgba(0,0,0,0), rgb(0,0,0));
+}
+
+.posicao{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.toolbarseg{
+    background-color: #232F3E;
+    
+    font-size: 0.875rem; 
+    display: flex;
+    justify-content: center;    
+
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+li{
+    padding: 10px 20px;
+}
+
+.conta{
+
+    display: flex;
+  align-items: center;
+}

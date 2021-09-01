@@ -1,0 +1,18 @@
+.content{
+
+    
+    background-color: #232F3E;
+}
+
+.espera{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+}
+
+.center{
+
+    align-items: center;
+}

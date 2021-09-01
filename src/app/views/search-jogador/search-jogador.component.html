@@ -1,0 +1,71 @@
+<div >
+    <mat-card class="lupa" >
+        <mat-card-content >
+            
+    <form  > 
+        <mat-form-field>
+        
+        <mat-label><i class="2rem material-icons" >filter_list</i></mat-label>
+                   
+        <mat-select placeholder="Selecione o criterio de pesquisa" name="criterio" [(ngModel)]="criterioP" >
+            <mat-option [disabled]="true">--Criterio--</mat-option>
+                    <mat-option *ngFor="let p of criterio"   name="posicao"
+                    [value]="p.criterio" >{{p.criterio}}
+                  
+            </mat-option>
+                       
+        </mat-select>
+    </mat-form-field>
+        <mat-form-field>
+            <mat-label>insira o nome que deseja Pesquisar</mat-label>
+            
+            <input matInput placeholder="Pesquisar" [(ngModel)]="nome"  name="nome" minlength="4" >
+
+
+        </mat-form-field>
+        <button  mat-raised-button (click)="search()" color="primary" ><i class="2rem material-icons" >search</i></button> 
+    </form>
+    </mat-card-content>
+    </mat-card>
+</div>
+
+<div *ngIf="!noresult" class="result">
+<strong><i>Nenhum resultado encontrado</i></strong>
+
+</div>
+
+
+<div *ngIf="controlmsg" class="result">
+    <span><strong><i>{{msg}}</i></strong></span>
+    
+    </div>
+
+<div class="content" >
+    <div *ngIf="espera" class="espera">
+        <mat-spinner  color="accent" mode="indeterminate"></mat-spinner>
+    
+    
+    </div>
+
+    <div *ngIf="ret" class="orga">
+        <div *ngFor="let ret of ret" class="grelha">
+    <mat-card class="resultmat" >
+        <mat-card-title>{{ret.nome}} </mat-card-title>
+        
+        <mat-card-content class="mat-card-content">
+        <p class="centerImg">    <img src='data:image/png;base64,{{ret.picByte}}' width="200" height="200"></p>
+         <p><strong>Alcunha: </strong> {{ret.alcunha}}  </p>
+         <p><strong>Posicao: </strong> {{ret.posicao}}  </p>
+         <p><strong>Altura: </strong> {{ret.altura}} cm </p>
+         <p><strong>Data de nascimento: </strong> {{ret.datanatalicia}}  </p>
+    
+         
+        </mat-card-content>
+        
+    </mat-card>
+    </div>
+</div>
+</div>
+
+
+

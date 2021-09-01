@@ -1,0 +1,51 @@
+.espera{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+}
+
+
+.mat-card{
+    margin-bottom: 30px;
+  width: 250px;
+  background-color: #232F3E;
+  
+  align-items: center;
+  justify-content: center;
+      
+}
+
+img{
+    border-radius: 5%;
+  }
+.divOrganizacao{
+  display: flex;
+  flex-direction: column;
+  background-color: #232F3E;
+  }
+.separar{
+
+  margin-left: 10px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.divmae{
+  display:grid;
+  gap: 50px;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+}
+
+.mat-card-content{
+  display: flex;
+  justify-content: center;
+
+
+}

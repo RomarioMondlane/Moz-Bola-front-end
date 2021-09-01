@@ -1,0 +1,13 @@
+.espera{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

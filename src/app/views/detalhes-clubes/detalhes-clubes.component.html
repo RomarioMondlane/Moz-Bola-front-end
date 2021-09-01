@@ -1,0 +1,27 @@
+<div class="content" >
+    <div *ngIf="!ret" class="espera">
+        <mat-spinner  color="accent" mode="indeterminate"></mat-spinner>
+    
+    
+    </div>
+    <mat-card class="mat-card" >
+        <mat-card-title>{{ret.nome}} </mat-card-title>
+        
+        <mat-card-content class="mat-card-content">
+        <p class="center">    <img src='data:image/png;base64,{{ret.picByte}}' width="200" height="200"></p>
+         <p><strong>Localizacao: </strong> {{ret.localizacao}}  </p>
+         <p><strong>Treinador: </strong> {{ret.treinador}}  </p>
+         <p><strong>Proprietario: </strong> {{ret.dono}}  </p>
+         <p><strong>Ano de funadacao: </strong> {{ret.fundacao}}  </p>
+    
+         
+        </mat-card-content>
+        
+    </mat-card>
+    
+
+
+
+
+</div>
+

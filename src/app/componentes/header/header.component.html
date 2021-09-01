@@ -1,0 +1,41 @@
+<p>
+    <mat-toolbar class="toolbar">
+        <img src="assets/bola.png" alt="logo" width="90px" class="p" >
+        <div class="posicao">
+            <img src="assets/joga.png" alt="logo" width="80px"  >
+                <h1>Mozambique go Footbal</h1>
+        <img src="assets/bola.png" alt="logo" width="90px" >
+        
+
+        </div>
+        
+        <div class="conta"><p><a [matMenuTriggerFor]="appMenu">   <i class="2rem material-icons" >account_circle</i>Minha conta</a></p>
+        </div>
+        
+        <mat-menu #appMenu="matMenu">
+             <p mat-menu-item>  <i >Iniciar Sessão</i> </p>
+             <p mat-menu-item>  <i >Terminar Sessão</i> </p>
+             <p mat-menu-item>  <i >Cadastrar</i> </p>
+            
+           </mat-menu>
+         </mat-toolbar>
+         
+    <mat-toolbar class="toolbarseg">
+        
+                <ul> 
+                    <li routerLink="noticias"><a ><i class="2rem material-icons"  >import_contacts
+                    </i> Noticias</a></li>
+            
+            <li routerLink="jogador"><a ><i class="2rem material-icons"  >remove_red_eye</i> Ver Jogadores</a></li>
+            <li routerLink="clube" ><a><i class="2rem material-icons" >remove_red_eye</i> Ver Clubes</a></li>
+            <li routerLink="searchj"><a><i class="2rem material-icons" >search</i> Pesquisar Jogador</a></li>
+            
+            <li routerLink="criarjogador"><a><i class="2rem material-icons" >add_circle_outline</i> Adicionar Jogador</a></li>
+            
+            <li routerLink="ciarclube"><a><i class="2rem material-icons" >add_circle</i> Adicionar Clube</a></li>
+        </ul>
+        
+    </mat-toolbar>
+
+
+</p>

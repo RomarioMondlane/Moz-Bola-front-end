@@ -1,0 +1,73 @@
+<mat-card >
+    <mat-card-title>Adicionar clube </mat-card-title>
+    <mat-card-content >
+        
+        <form  > 
+            <mat-form-field>
+                <input matInput placeholder="insira o nome do clube" [(ngModel)]="c.nome"  name="nome" minlength="4" >
+
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input matInput placeholder="inisira o ano de fundacao" [(ngModel)]="c.fundacao"  name="alcunha" minlength="4" >
+
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input matInput placeholder="inisra o nome do proprietario" [(ngModel)]="c.dono"  name="altura" minlength="4" >
+
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="inisira a localizacao do clube" [(ngModel)]="c.localizacao"  name="alcunha" minlength="4" >
+
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="insira o nome do treinador" [(ngModel)]="c.treinador"  name="alcunha" minlength="4" >
+
+            </mat-form-field>
+            
+
+
+            
+
+              <input mat-raised-button type="file" (change)="selectFile($event)" />
+              
+            
+              <div *ngIf="currentFile" >
+                
+                <mat-progress-bar mode="buffer" color="warn" value="40" >
+              
+    
+               </mat-progress-bar>
+              
+              </div>
+              
+              <mat-error *ngIf="message" >{{ message }}</mat-error>
+    
+              <div >
+                <ul
+                  class="list-group list-group-flush"
+                  *ngFor="let file of fileInfos | async"
+                >
+                  <li >
+                    <a href="{{ file.url }}">{{ file.name }}</a>
+                  </li>
+                </ul>
+              </div>
+            
+            
+            
+        </form>
+        
+        <button  mat-raised-button (click)="criar()" color="primary" ><i class="2rem material-icons"  >add  
+
+        </i> Adicionar</button> 
+        
+
+
+    </mat-card-content>
+
+
+</mat-card>
+
+
