@@ -9,31 +9,50 @@
 
         </div>
         
-        <div class="conta"><p><a [matMenuTriggerFor]="appMenu">   <i class="2rem material-icons" >account_circle</i>Minha conta</a></p>
+        <div class="conta">
+            <mat-nav-list >
+            
+        <a [matMenuTriggerFor]="appMenu" mat-list-item> 
+              <i class="2rem material-icons" >account_circle</i>Minha conta
+            
+            </a>
+            </mat-nav-list>
         </div>
         
         <mat-menu #appMenu="matMenu">
-             <p mat-menu-item>  <i >Iniciar Sessão</i> </p>
-             <p mat-menu-item>  <i >Terminar Sessão</i> </p>
-             <p mat-menu-item>  <i >Cadastrar</i> </p>
-            
+            <mat-nav-list class="nav-listone">
+                <a mat-list-item (click)="login()">
+                    <i class="1rem material-icons"  >system_update_alt
+                    </i>
+                    Iniciar Sessão
+                  </a>
+                  <a mat-list-item (click)="Terminar()">
+                    <i class="1rem material-icons"  >input
+                    </i>
+                    Terminar Sessão
+                  </a>
+                  <a mat-list-item (click)="cadastrar()">
+                    <i class="1rem material-icons"  >person_add
+                    </i>
+                    Cadastrar
+                  </a>
+                  
+            </mat-nav-list>
            </mat-menu>
          </mat-toolbar>
          
     <mat-toolbar class="toolbarseg">
-        
-                <ul> 
-                    <li routerLink="noticias"><a ><i class="2rem material-icons"  >import_contacts
-                    </i> Noticias</a></li>
-            
-            <li routerLink="jogador"><a ><i class="2rem material-icons"  >remove_red_eye</i> Ver Jogadores</a></li>
-            <li routerLink="clube" ><a><i class="2rem material-icons" >remove_red_eye</i> Ver Clubes</a></li>
-            <li routerLink="searchj"><a><i class="2rem material-icons" >search</i> Pesquisar Jogador</a></li>
-            
-            <li routerLink="criarjogador"><a><i class="2rem material-icons" >add_circle_outline</i> Adicionar Jogador</a></li>
-            
-            <li routerLink="ciarclube"><a><i class="2rem material-icons" >add_circle</i> Adicionar Clube</a></li>
-        </ul>
+        <mat-nav-list class="nav-list">
+            <a routerLink="noticias" mat-list-item ><i class="2rem material-icons"  >import_contacts
+            </i> Noticias</a>
+            <a routerLink="jogador" mat-list-item><i class="2rem material-icons"  >remove_red_eye</i> Ver Jogadores</a>
+            <a routerLink="clube" mat-list-item><i class="2rem material-icons" >remove_red_eye</i> Ver Clubes</a>
+            <a routerLink="searchj" mat-list-item><i class="2rem material-icons" >search</i> Ver Clubes</a>
+          
+            <a routerLink="criarjogador" mat-list-item><i class="2rem material-icons" >add_circle_outline</i> Adicionar Jogador</a>
+                <a routerLink="ciarclube" mat-list-item><i class="2rem material-icons" >add_circle</i> Adicionar Clube</a>
+        </mat-nav-list>        
+                
         
     </mat-toolbar>
 

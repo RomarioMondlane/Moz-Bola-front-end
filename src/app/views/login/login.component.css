@@ -1,0 +1,15 @@
+form{
+    display: flex;
+    flex-direction:column ;
+
+}
+.conteiner{
+
+    width: 400px;
+    background-color: #232F3E;
+}
+.avatar{
+    background-size: cover;
+    
+
+}

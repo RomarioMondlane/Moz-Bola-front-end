@@ -2,26 +2,36 @@
     <mat-card-title>Adicionar Jogador </mat-card-title>
     <mat-card-content >
         
-        <form  > 
+        <form  #formulario="ngForm"> 
             <mat-form-field>
-                <input matInput placeholder="nome do jogador" [(ngModel)]="j.nome"  name="nome" minlength="4" >
+                <input matInput placeholder="nome do jogador" [(ngModel)]="j.nome" #nome="ngModel"  name="nome" minlength="4" required>
+
+            </mat-form-field>
+            <div *ngIf="nome.invalid  && (nome.dirty || nome.touched)">
+
+              <span><i><p>O minimo tamanho deve ser 4</p></i> </span>
+              
+            </div>
+            <mat-form-field>
+                <input matInput placeholder="alcunha do jogador" [(ngModel)]="j.alcunha"  name="alcunha"  >
 
             </mat-form-field>
             
             <mat-form-field>
-                <input matInput placeholder="alcunha do jogador" [(ngModel)]="j.alcunha"  name="alcunha" minlength="4" >
+
+                <input matInput placeholder="altura do jogador" #altura="ngModel" [(ngModel)]="j.altura"  name="altura" minlength="3" maxlength="3" >
 
             </mat-form-field>
-            
-            <mat-form-field>
-                <input matInput placeholder="altura do jogador" [(ngModel)]="j.altura"  name="altura" minlength="4" >
+            <div *ngIf="altura.invalid  && (altura.dirty || altura.touched)">
 
-            </mat-form-field>
-            
+              <span><i><p>Campo obrigatorio ou altura invalida, deve ser em centimentros</p></i> </span>
+              
+            </div>
+          
             <mat-form-field>
                 <mat-label>Posicao</mat-label>
                    
-                <mat-select placeholder="Selecione a posicao" name="posicao" [(ngModel)]="j.posicao" >
+                <mat-select placeholder="Selecione a posicao" name="posicao" #posicao="ngModel" [(ngModel)]="j.posicao" required>
                     <mat-option [disabled]="true">--posicao--</mat-option>
                             <mat-option *ngFor="let p of pos"   name="posicao"
                             [value]="p.posicao" >{{p.posicao}}
@@ -29,18 +39,26 @@
                     </mat-option>
                                
                 </mat-select>
-            
+            <div *ngIf="posicao.invalid && (posicao.dirty || posicao.touched)">
+              
+              <span><i><p>Defina a posicao</p></i> </span>
+
+            </div>
                 
                 
             </mat-form-field>
 
             <mat-form-field color="accent" appearance="fill">
                 <mat-label>Data de nascimento</mat-label>
-                <input matInput [matDatepicker]="picker1" name="datanatalicia"  [(ngModel)]="j.datanatalicia" >
+                <input matInput [matDatepicker]="picker1" name="datanatalicia" #data="ngModel" [(ngModel)]="j.datanatalicia" required >
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
               </mat-form-field>
-
+              <div *ngIf="data.invalid && (data.dirty || data.touched) ">
+                <span><i><p>Campo obrigatorio</p></i> </span>
+  
+              </div>
+            
               <input mat-raised-button type="file" (change)="selectFile($event)" />
               
             
@@ -66,10 +84,9 @@
                 </ul>
               </div>
             
-            
         </form>
         
-        <button  mat-raised-button (click)="criar()" color="primary" ><i class="2rem material-icons"  >add  
+        <button  mat-raised-button [disabled]="!formulario.valid" (click)="criar()" color="primary" ><i class="2rem material-icons"  >add  
           
          
         </i> Adicionar</button> 

@@ -4,21 +4,32 @@
         
         <form  > 
             <mat-form-field>
-                <input matInput placeholder="insira o nome do clube" [(ngModel)]="c.nome"  name="nome" minlength="4" >
+              
+              <mat-label>Nome do clube</mat-label>
+        
+                <input matInput  [(ngModel)]="c.nome"  name="nome" minlength="4" >
 
             </mat-form-field>
             
             <mat-form-field>
-                <input matInput placeholder="inisira o ano de fundacao" [(ngModel)]="c.fundacao"  name="alcunha" minlength="4" >
+              
+              <mat-label>Ano de fundacao</mat-label>
+        
+                <input matInput  [(ngModel)]="c.fundacao"  name="alcunha" minlength="4" >
 
             </mat-form-field>
             
             <mat-form-field>
-                <input matInput placeholder="inisra o nome do proprietario" [(ngModel)]="c.dono"  name="altura" minlength="4" >
+              
+              <mat-label>Proprietario</mat-label>
+        
+                <input matInput  [(ngModel)]="c.dono"  name="altura" minlength="4" >
 
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="inisira a localizacao do clube" [(ngModel)]="c.localizacao"  name="alcunha" minlength="4" >
+              <mat-label>Localizacao</mat-label>
+        
+                <input matInput    [(ngModel)]="c.localizacao"  name="alcunha" minlength="4" >
 
             </mat-form-field>
             <mat-form-field>

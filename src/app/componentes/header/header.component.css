@@ -40,3 +40,14 @@ li{
     display: flex;
   align-items: center;
 }
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+}
+.nav-listone{
+    display: flex;
+    flex-direction:column;
+
+
+}

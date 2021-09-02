@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatSnackBarModule,MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,7 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './componentes/header/header.component';
 import { ContentComponent } from './componentes/content/content.component';
-import { LoginComponent } from './componentes/login/login.component';
+
 import { MatSidenavModule} from'@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -21,7 +22,7 @@ import { MatCardModule} from'@angular/material/card';
 import { MatProgressButtonsModule } from 'mat-progress-buttons';
 import { DetalhesComponent } from './views/detalhes/detalhes.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatDialogModule} from '@angular/material/dialog';
+
 import { AdicionarJogadorComponent } from './views/adicionar-jogador/adicionar-jogador.component';
 import { AdicionarClubeComponent } from './views/adicionar-clube/adicionar-clube.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -36,7 +37,10 @@ import { DetalhesClubesComponent } from './views/detalhes-clubes/detalhes-clubes
 import {ConnectionServiceModule} from'ng-connection-service'
 import {VerificarConexaoService} from 'src/app/servicos/verificar-conexao.service';
 import { SearchJogadorComponent } from './views/search-jogador/search-jogador.component';
-import { NoticiasComponent } from './views/noticias/noticias.component'
+import { NoticiasComponent } from './views/noticias/noticias.component';
+import { CadastroComponent } from './views/cadastro/cadastro.component'
+import {LoginComponent} from 'src/app/views/login/login.component'
+
 
 
 
@@ -54,8 +58,9 @@ import { NoticiasComponent } from './views/noticias/noticias.component'
     ListarClubesComponent,
     DetalhesClubesComponent,
     SearchJogadorComponent,
-    NoticiasComponent
-  ],entryComponents:[DetalhesComponent,DetalhesClubesComponent],
+    NoticiasComponent,
+    CadastroComponent
+  ],entryComponents:[DetalhesComponent,DetalhesClubesComponent,LoginComponent,CadastroComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -66,12 +71,12 @@ import { NoticiasComponent } from './views/noticias/noticias.component'
     HttpClientModule,MatProgressBarModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
-    MatCardModule,MatDialogModule,
+    MatCardModule,
     MatProgressButtonsModule ,
     MatSnackBarModule,MatDatepickerModule,
-    MatSelectModule,
+    MatSelectModule,MatDialogModule,
     ConnectionServiceModule,
-    
+    MatListModule,
     MatNativeDateModule
   ],
   providers: [VerificarConexaoService],

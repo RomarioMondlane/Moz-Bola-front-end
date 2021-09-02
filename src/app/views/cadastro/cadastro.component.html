@@ -1,0 +1,46 @@
+<div class="conteiner">
+    <mat-card  >
+        <div mat-card-avatar class="avatar"><img src="assets/bola.png" width="50px" height="40px"></div>
+        <mat-card-title >Ficha de cadastro</mat-card-title>
+        <mat-card-content >
+            
+    <form  #form="ngForm"> 
+        <mat-form-field>
+        
+        <mat-label>Username</mat-label>
+        <input matInput name="nome" #nome="ngModel" [(ngModel)]="user.username" required minlength="6">
+        <div *ngIf="nome.invalid && (nome.dirty || nome.touched) ">
+            <span>campo obrigatorio e o minimo tamanho de caracteres deve ser 6</span>
+        </div>        
+    </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            
+            <input matInput  [(ngModel)]="user.password" #password="ngModel" type="password" name="password" minlength="4" required >
+    
+    
+        </mat-form-field>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <span>Campo obrigatorio e o minimo tamanho de caracteres deve ser 4</span>
+        </div>
+        <mat-form-field>
+            <mat-label>Confirmar password</mat-label>
+            <input matInput #cpassword="ngModel" [(ngModel)]="confirmar" type="password" name="cpassword" minlength="4" required >
+        </mat-form-field>
+        <div *ngIf="(cpassword.dirty || cpassword.touched) && cpassword!=password">
+            <span>A definicao de password e diferente da confirmacao</span>
+
+        </div>    
+    </form>
+    
+    </mat-card-content>
+    <mat-card-actions>
+        <button  mat-raised-button (click)="Cadastrar()" color="primary" [disabled]="nome.invalid && password.invalid && password!=cpassword" ><i class="2rem material-icons"  >mode_edit
+        </i>Cadastrar</button> 
+        <button mat-raised-button mat-dialog-close color="warn" ><i class="2rem material-icons"  >input
+        </i>Sair</button>
+    </mat-card-actions>
+    
+    
+    </mat-card>
+    </div>

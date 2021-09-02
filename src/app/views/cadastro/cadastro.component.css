@@ -1,0 +1,27 @@
+form{
+    display: flex;
+    flex-direction:column ;
+
+}
+.conteiner{
+
+    width: 500px;
+    
+    background-color: #232F3E;
+}
+.avatar{
+    background-size: cover;
+    
+
+}
+
+span{
+    color: red;
+}
+
+.mat-card-title{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    
+}
