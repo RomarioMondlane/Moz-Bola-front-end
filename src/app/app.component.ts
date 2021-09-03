@@ -13,6 +13,7 @@ export class AppComponent {
   
   isConnected?:boolean;
   msg=""
+  logado:any
   constructor(private cc:ConnectionService,private http:HttpClient){
     console.log(cc.monitor()._isScalar)
     this.isConnected=cc.monitor()._isScalar

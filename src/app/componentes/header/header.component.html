@@ -10,10 +10,13 @@
         </div>
         
         <div class="conta">
-            <mat-nav-list >
             
+            <mat-nav-list >
+               
         <a [matMenuTriggerFor]="appMenu" mat-list-item> 
-              <i class="2rem material-icons" >account_circle</i>Minha conta
+              <i class="2rem material-icons" >account_circle</i><div *ngIf="nome">{{nome}}</div>
+              <div *ngIf="!nome">Minha conta</div>
+              
             
             </a>
             </mat-nav-list>
@@ -21,20 +24,24 @@
         
         <mat-menu #appMenu="matMenu">
             <mat-nav-list class="nav-listone">
+               <div *ngIf="!sessao">
                 <a mat-list-item (click)="login()">
                     <i class="1rem material-icons"  >system_update_alt
                     </i>
                     Iniciar Sessão
                   </a>
+                 </div> 
+                 <div *ngIf="sessao">
                   <a mat-list-item (click)="Terminar()">
                     <i class="1rem material-icons"  >input
                     </i>
                     Terminar Sessão
                   </a>
+                </div>
                   <a mat-list-item (click)="cadastrar()">
                     <i class="1rem material-icons"  >person_add
                     </i>
-                    Cadastrar
+                    Cadastrar 
                   </a>
                   
             </mat-nav-list>
@@ -47,7 +54,7 @@
             </i> Noticias</a>
             <a routerLink="jogador" mat-list-item><i class="2rem material-icons"  >remove_red_eye</i> Ver Jogadores</a>
             <a routerLink="clube" mat-list-item><i class="2rem material-icons" >remove_red_eye</i> Ver Clubes</a>
-            <a routerLink="searchj" mat-list-item><i class="2rem material-icons" >search</i> Ver Clubes</a>
+            <a routerLink="searchj" mat-list-item><i class="2rem material-icons" >search</i> Pesquisar</a>
           
             <a routerLink="criarjogador" mat-list-item><i class="2rem material-icons" >add_circle_outline</i> Adicionar Jogador</a>
                 <a routerLink="ciarclube" mat-list-item><i class="2rem material-icons" >add_circle</i> Adicionar Clube</a>

@@ -23,6 +23,7 @@
         <div *ngIf="password.invalid && (password.dirty || password.touched)">
             <span>Campo obrigatorio e o minimo tamanho de caracteres deve ser 4</span>
         </div>
+        
         <mat-form-field>
             <mat-label>Confirmar password</mat-label>
             <input matInput #cpassword="ngModel" [(ngModel)]="confirmar" type="password" name="cpassword" minlength="4" required >
@@ -31,7 +32,25 @@
             <span>A definicao de password e diferente da confirmacao</span>
 
         </div>    
-    </form>
+         
+        <mat-form-field>
+        <mat-label>Administrador</mat-label>
+                <mat-select  [(ngModel)]="user.isadmin" #isadmin="ngModel"  name="isadmin" required>
+                    <mat-option [disabled]="true">--Tipo--</mat-option>
+                            <mat-option *ngFor="let p of adimin"   name="isadmin"
+                            [value]="p.isadmin" >{{p.nome}}
+                          
+                    </mat-option>
+                               
+                </mat-select>           
+
+        </mat-form-field>
+        
+        <div *ngIf="isadmin.invalid && (isadmin.dirty || isadmin.touched)">
+            <span>Defina o tipo de usuario</span>
+        </div>
+
+   </form>
     
     </mat-card-content>
     <mat-card-actions>

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {LoginComponent} from 'src/app/views/login/login.component'
 import {CadastroComponent} from 'src/app/views/cadastro/cadastro.component'
+import { Router} from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,10 +11,20 @@ import {CadastroComponent} from 'src/app/views/cadastro/cadastro.component'
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  @Input() logado:any;
+  sessao=false;
+  nome:any
+  constructor(public dialog: MatDialog,private rota:Router,private location: Location) { }
 
   ngOnInit(): void {
-  }
+    
+if(localStorage.getItem("nome")?.length!=0){
+this.sessao=true;
+this.nome=localStorage.getItem("nome")
+  
+}  
+  
+}
 
   login(){
 
@@ -21,5 +33,10 @@ export class HeaderComponent implements OnInit {
   cadastrar(){
     this.dialog.open(CadastroComponent)
   }
-  Terminar(){}
+  Terminar(){
+    localStorage.setItem('token',"")
+    localStorage.setItem('nome','')
+    location.reload()
+    
+  }
 }
